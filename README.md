@@ -1,6 +1,6 @@
 ### INF601 - Advanced Programming in Python
 ### Htet Aung Hlaing
-### Mini Project 1
+### Mini Project 2
  
  
 # Project Title
