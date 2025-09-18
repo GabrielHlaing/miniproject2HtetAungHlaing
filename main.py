@@ -20,7 +20,11 @@
 
 import pandas as pd
 import matplotlib.pyplot as plt
+from pathlib import Path
 
+chartPath = Path('charts')
+if not chartPath.exists():
+    Path(r'charts').mkdir()
 
 df = pd.read_table("data/insurance.csv", sep=",")
 
@@ -31,21 +35,27 @@ plt.suptitle("")  # removes default extra title
 plt.xticks([1, 2], ["Non-Smoker", "Smoker"])
 plt.xlabel("Smoker")
 plt.ylabel("Charges")
-plt.show()
+plt.savefig(f'{chartPath}/smoker_charges.png')
+print('smoker_charges.png saved successfully')
+plt.close()
 
 # Plot 2: Average charges by gender (Bar chart)
 avg_charges = df.groupby("sex")["charges"].mean()
 female = avg_charges["female"]
 male = avg_charges["male"]
 plt.bar(['Female', 'Male'], [female, male], width=0.5, color=["orange","green"])
+plt.title('Average Insurance Charges by Gender')
 plt.xlabel('Gender')
 plt.ylabel('Average Charges')
-plt.title('Average Insurance Charges by Gender')
-plt.show()
+plt.savefig(f'{chartPath}/gender_charges.png')
+print('gender_charges.png saved successfully')
+plt.close()
 
 # Plot 3: Relation between age and BMI (Scatterplot)
 plt.scatter(df['age'], df['bmi'], color='g', alpha=0.7, edgecolor='k')
 plt.title("Age vs BMI")
 plt.xlabel('Age')
 plt.ylabel('BMI')
-plt.show()
+plt.savefig(f'{chartPath}/age_bmi.png')
+print('age_bmi.png saved successfully')
+plt.close()
