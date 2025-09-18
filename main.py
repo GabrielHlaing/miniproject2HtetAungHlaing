@@ -19,11 +19,33 @@
 # (20/20 points) There should be a README.md file in your project that explains what your project is, how to install the pip requirements, and how to execute the program. Please use the GitHub flavor of Markdown. Be thorough on the explanations.
 
 import pandas as pd
+import matplotlib.pyplot as plt
+
 
 df = pd.read_table("data/insurance.csv", sep=",")
 
-print(df.head())
+# Plot 1: Smokers vs Non-Smokers (Boxplot)
+df.boxplot(column="charges", by="smoker")
+plt.title("Insurance Charges: Smokers vs Non-Smokers")
+plt.suptitle("")  # removes default extra title
+plt.xticks([1, 2], ["Non-Smoker", "Smoker"])
+plt.xlabel("Smoker")
+plt.ylabel("Charges")
+plt.show()
 
-gender = df[['sex']]
+# Plot 2: Average charges by gender (Bar chart)
+avg_charges = df.groupby("sex")["charges"].mean()
+female = avg_charges["female"]
+male = avg_charges["male"]
+plt.bar(['Female', 'Male'], [female, male], width=0.5, color=["orange","green"])
+plt.xlabel('Gender')
+plt.ylabel('Average Charges')
+plt.title('Average Insurance Charges by Gender')
+plt.show()
 
-print(gender.head())
+# Plot 3: Relation between age and BMI (Scatterplot)
+plt.scatter(df['age'], df['bmi'], color='g', alpha=0.7, edgecolor='k')
+plt.title("Age vs BMI")
+plt.xlabel('Age')
+plt.ylabel('BMI')
+plt.show()
