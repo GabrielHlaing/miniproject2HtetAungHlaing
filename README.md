@@ -5,12 +5,26 @@
  
 # Project Title
  
-Miniproject 1 Stock Tickers
+Miniproject 2 - Insurance Data Visualization with Pandas & Matplotlib
  
 ## Description
  
-This project retrieves the last 10 trading days of closing prices for five selected stock tickers using the **yFinance API**.  
-It then generates graphs for each stock and automatically saves them as PNG files in the `charts/` directory.   
+This project analyzes an insurance dataset using Pandas and visualizes trends with Matplotlib.
+The program answers a few basic questions:
+
+* How do insurance charges differ between smokers and non-smokers?
+
+* Do average charges differ between males and females?
+
+* Is there any relationship between a person’s age and BMI?
+
+Three charts are generated and automatically saved in the charts/ folder when you run the program:
+
+* **Boxplot**: Insurance charges for smokers vs. non-smokers
+
+* **Bar chart**: Average insurance charges by gender
+
+* **Scatter plot**: Relationship between age and BMI
 
 ## Getting Started
  
@@ -20,6 +34,7 @@ It then generates graphs for each stock and automatically saves them as PNG file
 ```
 pip install -r requirements.txt
 ```
+* Download the CSV file from [kaggle](https://www.kaggle.com/datasets/mosapabdelghany/medical-insurance-cost-dataset)
  
 ### Executing program
 Run the script with:
@@ -37,6 +52,7 @@ python main.py
 
 ## Acknowledgments
 
-* [Matplotlib Tutorial](https://matplotlib.org/stable/tutorials/pyplot.html)
-* [Yahoo Finance](https://finance.yahoo.com/lookup/)
-* [yFinance Documentation](https://ranaroussi.github.io/yfinance/)
+* [Matplotlib Tutorial](https://matplotlib.org/stable/plot_types/index.html)
+* [Pandas Dataframe](https://pandas.pydata.org/docs/getting_started/index.html)
+* [GeeksforGeeks](https://www.geeksforgeeks.org/pandas/pandas-groupby-average/)
+* Dataset: [Insurance Cost Dataset (Kaggle)](https://www.kaggle.com/datasets/mosapabdelghany/medical-insurance-cost-dataset)

@@ -47,7 +47,7 @@ plt.bar(['Female', 'Male'], [female, male], width=0.5, color=["orange","green"])
 plt.title('Average Insurance Charges by Gender')
 plt.xlabel('Gender')
 plt.ylabel('Average Charges')
-plt.savefig(f'{chartPath}/gender_charges.png')
+plt.savefig(f'{chartPath}/avg_gender_charges.png')
 print('gender_charges.png saved successfully')
 plt.close()
 
